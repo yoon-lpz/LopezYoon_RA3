@@ -1110,6 +1110,16 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""initialStateCheck"": true,
                     ""priority"": 0
+                },
+                {
+                    ""name"": ""ChangeGravity"",
+                    ""type"": ""Button"",
+                    ""id"": ""18965a69-38e5-4df4-8bd3-de83eeda439c"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false,
+                    ""priority"": 0
                 }
             ],
             ""bindings"": [
@@ -1167,6 +1177,17 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                     ""action"": ""Move"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""c9f9e6e8-0c20-4d9f-94b5-aad32377f08b"",
+                    ""path"": ""<Keyboard>/0"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Keyboard&Mouse"",
+                    ""action"": ""ChangeGravity"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -1260,6 +1281,7 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         // PlayerMovement
         m_PlayerMovement = asset.FindActionMap("PlayerMovement", throwIfNotFound: true);
         m_PlayerMovement_Move = m_PlayerMovement.FindAction("Move", throwIfNotFound: true);
+        m_PlayerMovement_ChangeGravity = m_PlayerMovement.FindAction("ChangeGravity", throwIfNotFound: true);
     }
 
     ~@InputSystem_Actions()
@@ -1722,6 +1744,7 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
     private readonly InputActionMap m_PlayerMovement;
     private List<IPlayerMovementActions> m_PlayerMovementActionsCallbackInterfaces = new List<IPlayerMovementActions>();
     private readonly InputAction m_PlayerMovement_Move;
+    private readonly InputAction m_PlayerMovement_ChangeGravity;
     /// <summary>
     /// Provides access to input actions defined in input action map "PlayerMovement".
     /// </summary>
@@ -1737,6 +1760,10 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         /// Provides access to the underlying input action "PlayerMovement/Move".
         /// </summary>
         public InputAction @Move => m_Wrapper.m_PlayerMovement_Move;
+        /// <summary>
+        /// Provides access to the underlying input action "PlayerMovement/ChangeGravity".
+        /// </summary>
+        public InputAction @ChangeGravity => m_Wrapper.m_PlayerMovement_ChangeGravity;
         /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
@@ -1766,6 +1793,9 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
             @Move.started += instance.OnMove;
             @Move.performed += instance.OnMove;
             @Move.canceled += instance.OnMove;
+            @ChangeGravity.started += instance.OnChangeGravity;
+            @ChangeGravity.performed += instance.OnChangeGravity;
+            @ChangeGravity.canceled += instance.OnChangeGravity;
         }
 
         /// <summary>
@@ -1780,6 +1810,9 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
             @Move.started -= instance.OnMove;
             @Move.performed -= instance.OnMove;
             @Move.canceled -= instance.OnMove;
+            @ChangeGravity.started -= instance.OnChangeGravity;
+            @ChangeGravity.performed -= instance.OnChangeGravity;
+            @ChangeGravity.canceled -= instance.OnChangeGravity;
         }
 
         /// <summary>
@@ -2041,5 +2074,12 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnMove(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "ChangeGravity" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnChangeGravity(InputAction.CallbackContext context);
     }
 }
