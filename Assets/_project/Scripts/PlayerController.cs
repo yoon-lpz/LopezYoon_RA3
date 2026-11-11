@@ -62,7 +62,7 @@ public class PlayerController : MonoBehaviour, InputSystem_Actions.IPlayerMoveme
     }
 
     public void TakeDamage() {
-        
+        if (_rb.gravityScale < 0) _rb.gravityScale = 1;
         GameManager.Instance.LoseLife();
     }
 }

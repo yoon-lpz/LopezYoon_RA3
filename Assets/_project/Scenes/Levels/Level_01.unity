@@ -128,7 +128,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 15172600}
-  - component: {fileID: 15172599}
+  - component: {fileID: 15172601}
   m_Layer: 0
   m_Name: UI
   m_TagString: Untagged
@@ -136,7 +136,25 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &15172599
+--- !u!4 &15172600
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 15172598}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 2021.2957, y: 1634.3461, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 895380235}
+  - {fileID: 1520563031}
+  - {fileID: 1912149067}
+  m_Father: {fileID: 589322565}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &15172601
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -148,25 +166,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf208605c46851843a66d183a4c5877a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CanvasController
---- !u!4 &15172600
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 15172598}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2020.8154, y: 1638.6704, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 895380235}
-  - {fileID: 1520563031}
-  - {fileID: 1912149067}
-  - {fileID: 218190001}
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &140914396
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -496,7 +495,7 @@ RectTransform:
   - {fileID: 680562449}
   - {fileID: 718651844}
   - {fileID: 214080131}
-  m_Father: {fileID: 15172600}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1126,9 +1125,9 @@ Camera:
   m_LensShift: {x: 0, y: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: 0
-    y: 0
-    width: 1
+    x: 0.10364584
+    y: -0.37870368
+    width: 0.5625
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
@@ -24341,7 +24340,8 @@ Transform:
   m_LocalPosition: {x: -0.48028, y: 4.3244, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 15172600}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &602928213
@@ -28044,7 +28044,7 @@ SceneRoots:
   - {fileID: 619394802}
   - {fileID: 589322565}
   - {fileID: 637979653}
-  - {fileID: 15172600}
+  - {fileID: 218190001}
   - {fileID: 140914396}
   - {fileID: 454311697}
   - {fileID: 1146140491}

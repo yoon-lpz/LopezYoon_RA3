@@ -26,6 +26,7 @@ public class GameManager : MonoBehaviour
             DontDestroyOnLoad(gameObject);
         }
         else Destroy(gameObject);
+
     }
 
     void Start()
@@ -88,6 +89,6 @@ public class GameManager : MonoBehaviour
     private void UpdateUI()
     {
         _livesText.text = $"x{_lives}";
-        _levelText.text = $"Level: {SceneManager.GetActiveScene().buildIndex + 1}";
+        _levelText.text = $"Level {SceneManager.GetActiveScene().buildIndex + 1}";
     }
 }
