@@ -57,6 +57,6 @@ public class PlayerController : MonoBehaviour, InputSystem_Actions.IPlayerMoveme
     }
 
     public void Die() {
-        Debug.Log("Player died!");
+        GameManager.Instance.LoseLife();
     }
 }

@@ -13,7 +13,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private TMP_Text _livesText;
     [SerializeField] private TMP_Text _levelText;
     [SerializeField] private GameObject _gameOverPanel;
-    [SerializeField] private GameObject _restartPanel;
+    [SerializeField] private GameObject _pausePanel;
 
     public static GameManager Instance;
 
@@ -29,7 +29,7 @@ public class GameManager : MonoBehaviour
         _lives = _startingLives;
         _isGameOver = false;
         _gameOverPanel.SetActive(false);
-        _restartPanel.SetActive(false);
+        _pausePanel.SetActive(false);
         UpdateUI();
     }
 
@@ -52,12 +52,12 @@ public class GameManager : MonoBehaviour
     public void Pause()
     {
         Time.timeScale = 0;
-        _restartPanel.SetActive(true);
+        _pausePanel.SetActive(true);
     }
     public void Resume()
     {
         Time.timeScale = 1;
-        _restartPanel.SetActive(false);
+        _pausePanel.SetActive(false);
     }
 
     public void RestartGame()
