@@ -42,6 +42,7 @@ public class PlayerController : MonoBehaviour, InputSystem_Actions.IPlayerMoveme
     public void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Deathtouch")) TakeDamage();
+        if (collision.gameObject.CompareTag("tp")) SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
     public void OnMove(InputAction.CallbackContext context) {

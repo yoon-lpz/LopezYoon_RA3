@@ -1126,9 +1126,9 @@ Camera:
   m_LensShift: {x: 0, y: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: 0.21875001
+    x: 0
     y: 0
-    width: 0.5625
+    width: 1
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
@@ -25223,7 +25223,7 @@ GameObject:
   - component: {fileID: 719168140}
   m_Layer: 0
   m_Name: tp
-  m_TagString: Untagged
+  m_TagString: tp
   m_Icon: {fileID: 8418204508859773708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
