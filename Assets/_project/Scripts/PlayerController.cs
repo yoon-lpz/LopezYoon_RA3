@@ -1,6 +1,7 @@
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 using static UnityEngine.RuleTile.TilingRuleOutput;
 
 public class PlayerController : MonoBehaviour, InputSystem_Actions.IPlayerMovementActions
@@ -12,7 +13,7 @@ public class PlayerController : MonoBehaviour, InputSystem_Actions.IPlayerMoveme
 	private Vector2 _moveInput;
     private Vector3 _scale;
 
-	[SerializeField] public bool CanChangeGravity = false;
+	public bool CanChangeGravity = false;
 
 	void Awake()
     {
@@ -23,7 +24,9 @@ public class PlayerController : MonoBehaviour, InputSystem_Actions.IPlayerMoveme
     void Start() {
 		_rb = GetComponent<Rigidbody2D>();
         _scale = transform.localScale;
-	}
+
+        CanChangeGravity = SceneManager.GetActiveScene().buildIndex > 0;
+    }
 
     private void OnEnable() => _inputActions.Enable();
     private void OnDisable() => _inputActions.Disable();
@@ -54,6 +57,6 @@ public class PlayerController : MonoBehaviour, InputSystem_Actions.IPlayerMoveme
     }
 
     public void Die() {
-        
+        Debug.Log("Player died!");
     }
 }
