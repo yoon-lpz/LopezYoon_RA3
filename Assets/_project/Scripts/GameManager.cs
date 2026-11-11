@@ -14,13 +14,17 @@ public class GameManager : MonoBehaviour
     [SerializeField] private TMP_Text _levelText;
     [SerializeField] private GameObject _gameOverPanel;
     [SerializeField] private GameObject _pausePanel;
+    [SerializeField] private AudioSource _bgmSource;
 
     public static GameManager Instance;
 
 
     void Awake()
     {
-        if (Instance == null) Instance = this;
+        if (Instance == null) {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
         else Destroy(gameObject);
     }
 
@@ -36,10 +40,12 @@ public class GameManager : MonoBehaviour
     public void LoseLife()
     {
         if (_isGameOver) return;
+        AudioManager.Instance.PlayTakeDamageSound();
         _lives = _lives > 0 ? _lives - 1 : 0;
         UpdateUI();
 
         if (_lives <= 0) GameOver();
+        else SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     public void GameOver()
@@ -47,24 +53,36 @@ public class GameManager : MonoBehaviour
         _isGameOver = true;
         _gameOverPanel.SetActive(true);
         Time.timeScale = 0;
+
+        if (_bgmSource != null) _bgmSource.Pause();
     }
 
     public void Pause()
     {
         Time.timeScale = 0;
         _pausePanel.SetActive(true);
+
+        if (_bgmSource != null) _bgmSource.Pause();
     }
     public void Resume()
     {
         Time.timeScale = 1;
         _pausePanel.SetActive(false);
+
+        if (_bgmSource != null) _bgmSource.UnPause();
     }
 
     public void RestartGame()
     {
         Time.timeScale = 1;
         _lives = _startingLives;
+        _pausePanel.SetActive(false);
+        _gameOverPanel.SetActive(false);
+        
         SceneManager.LoadScene(0);
+        UpdateUI();
+
+        if (_bgmSource != null) _bgmSource.UnPause();
     }
 
     private void UpdateUI()

@@ -37,7 +37,7 @@ public class PlayerController : MonoBehaviour, InputSystem_Actions.IPlayerMoveme
 
     public void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Deathtouch")) Die();
+        if (collision.gameObject.CompareTag("Deathtouch")) TakeDamage();
     }
 
     public void OnMove(InputAction.CallbackContext context) {
@@ -56,7 +56,8 @@ public class PlayerController : MonoBehaviour, InputSystem_Actions.IPlayerMoveme
         transform.localScale = _scale;
     }
 
-    public void Die() {
+    public void TakeDamage() {
+        
         GameManager.Instance.LoseLife();
     }
 }
