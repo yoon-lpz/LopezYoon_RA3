@@ -24339,6 +24339,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd6a63f1e6cb2b34eb49702f10bd261c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
+  _characterImage: {fileID: 602928215}
+  _characterSprites:
+  - {fileID: 21300000, guid: 8dd7256c7c0115c4ea53231f68602445, type: 3}
+  - {fileID: 21300000, guid: abe13606cd5b0e14d8c025874bc5b30f, type: 3}
   _livesText: {fileID: 707834992}
   _levelText: {fileID: 299787477}
   _gameOverPanel: {fileID: 1912149066}
