@@ -1039,6 +1039,7 @@ GameObject:
   - component: {fileID: 519420033}
   - component: {fileID: 519420034}
   - component: {fileID: 519420035}
+  - component: {fileID: 519420036}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1125,8 +1126,8 @@ Camera:
   m_LensShift: {x: 0, y: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: 0.10364584
-    y: -0.37870368
+    x: 0.21875001
+    y: 0
     width: 0.5625
     height: 1
   near clip plane: 0.3
@@ -1297,6 +1298,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ab684cf36da88b47890dd10a083d7ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CameraPersistance
+--- !u!114 &519420036
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: adf75adeb32efb34985dcc2f9e248744, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MusicController
+  _levelSongs:
+  - {fileID: 8300000, guid: 858ad32d036a942489142741348fd4ae, type: 3}
+  - {fileID: 8300000, guid: d03e8f58c53949e469fe9c521ba00969, type: 3}
 --- !u!1 &553104987
 GameObject:
   m_ObjectHideFlags: 0
@@ -28044,10 +28060,10 @@ SceneRoots:
   - {fileID: 619394802}
   - {fileID: 589322565}
   - {fileID: 637979653}
-  - {fileID: 218190001}
   - {fileID: 140914396}
   - {fileID: 454311697}
   - {fileID: 1146140491}
   - {fileID: 674126640}
   - {fileID: 414143249}
   - {fileID: 719168141}
+  - {fileID: 218190001}

@@ -27,6 +27,7 @@ public class GameManager : MonoBehaviour
         }
         else Destroy(gameObject);
 
+        SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
     void Start()
@@ -37,6 +38,8 @@ public class GameManager : MonoBehaviour
         _pausePanel.SetActive(false);
         UpdateUI();
     }
+
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode) => UpdateUI();
 
     public void LoseLife()
     {
