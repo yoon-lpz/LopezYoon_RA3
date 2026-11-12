@@ -1,15 +1,18 @@
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
     [Header("Game Settings")]
-    private int _lives;
+    private int _lives, _sceneIndex;
     private bool _isGameOver;
     readonly int _startingLives = 3;
 
     [Header("UI Elements")]
+    [SerializeField] private Image _characterImage;
+    [SerializeField] private Sprite[] _characterSprites;
     [SerializeField] private TMP_Text _livesText;
     [SerializeField] private TMP_Text _levelText;
     [SerializeField] private GameObject _gameOverPanel;
@@ -38,6 +41,8 @@ public class GameManager : MonoBehaviour
         _pausePanel.SetActive(false);
         UpdateUI();
     }
+
+    private void OnDestroy() => SceneManager.sceneLoaded -= OnSceneLoaded;
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode) => UpdateUI();
 
@@ -91,7 +96,12 @@ public class GameManager : MonoBehaviour
 
     private void UpdateUI()
     {
+        _sceneIndex = SceneManager.GetActiveScene().buildIndex;
+
         _livesText.text = $"x{_lives}";
-        _levelText.text = $"Level {SceneManager.GetActiveScene().buildIndex + 1}";
+        _levelText.text = $"Level {_sceneIndex + 1}";
+
+        if (_characterImage != null && _sceneIndex < _characterSprites.Length && _characterSprites[_sceneIndex] != null)
+            _characterImage.sprite = _characterSprites[_sceneIndex];
     }
 }
