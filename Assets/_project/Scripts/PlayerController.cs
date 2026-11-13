@@ -6,7 +6,7 @@ using static UnityEngine.RuleTile.TilingRuleOutput;
 
 public class PlayerController : MonoBehaviour, InputSystem_Actions.IPlayerMovementActions
 {
-    private float _moveSpeed = 15f, _targetAngle;
+    private float _moveSpeed = 30f, _targetAngle;
 
 	private InputSystem_Actions _inputActions;
     private Rigidbody2D _rb;
