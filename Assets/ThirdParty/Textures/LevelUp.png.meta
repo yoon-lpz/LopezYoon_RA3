@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: f8bd280e60b9e0e4793b4c2cb8022c98
+guid: 4915c4b4cda0f4e478c4684bf4c60685
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7798157185099296944
-    second: FreeExample2_0
+      213: -130070610015097871
+    second: LevelUp_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: FreeExample2_0
+      name: LevelUp_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 1171
-        height: 683
+        x: 23
+        y: 95
+        width: 1154
+        height: 1010
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 0b0f088b4ae983c60800000000000000
-      internalID: 7798157185099296944
+      spriteID: 1fbe4562875e13ef0800000000000000
+      internalID: -130070610015097871
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      FreeExample2_0: 7798157185099296944
+      LevelUp_0: -130070610015097871
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

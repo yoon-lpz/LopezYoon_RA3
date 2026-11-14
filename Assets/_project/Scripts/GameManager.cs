@@ -57,6 +57,13 @@ public class GameManager : MonoBehaviour
         else SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
+    public void GainLife()
+    {
+        if (_isGameOver) return;
+        _lives++;
+        UpdateUI();
+    }
+
     public void GameOver()
     {
         _isGameOver = true;
