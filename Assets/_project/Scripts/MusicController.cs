@@ -27,5 +27,20 @@ public class MusicController : MonoBehaviour
                 _audioSource.Play();
             }
         }
+        switch (_sceneIndex)
+        {
+            case 0:
+                _audioSource.volume = Mathf.Clamp01(0.75f);
+                break;
+            case 1:
+                _audioSource.volume = Mathf.Clamp01(0.5f);
+                break;
+            case 2:
+                _audioSource.volume = Mathf.Clamp01(0.25f);
+                break;
+            default:
+                _audioSource.volume = Mathf.Clamp01(0.75f);
+                break;
+        }
     }
 }

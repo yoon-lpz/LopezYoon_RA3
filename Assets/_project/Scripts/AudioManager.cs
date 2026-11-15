@@ -8,6 +8,7 @@ public class AudioManager : MonoBehaviour
 
     [Header("Audios")]
     public AudioClip TakeDamage;
+    public AudioClip GainLife;
 
     private void Awake()
     {
@@ -26,4 +27,5 @@ public class AudioManager : MonoBehaviour
     }   
 
     public void PlayTakeDamageSound() => _audioSource.PlayOneShot(TakeDamage);
+    public void PlayGainLifeSound() => _audioSource.PlayOneShot(GainLife);
 }

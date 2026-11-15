@@ -60,6 +60,7 @@ public class GameManager : MonoBehaviour
     public void GainLife()
     {
         if (_isGameOver) return;
+        AudioManager.Instance.PlayGainLifeSound();
         _lives++;
         UpdateUI();
     }
