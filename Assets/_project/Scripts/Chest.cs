@@ -32,6 +32,8 @@ public class Chest : MonoBehaviour
             _extraMap.SetActive(true);
             _messageUI.SetActive(true);
 
+            AudioManager.Instance.PlayOpenChestSound();
+
             StartCoroutine(HideMessageTimer());
         }
     }

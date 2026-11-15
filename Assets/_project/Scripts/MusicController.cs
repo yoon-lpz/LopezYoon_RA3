@@ -3,8 +3,9 @@ using UnityEngine.SceneManagement;
 
 public class MusicController : MonoBehaviour
 {
-    private int _sceneIndex;
     private AudioSource _audioSource;
+
+    private int _sceneIndex, _songIndex;
 
     [SerializeField] private AudioClip[] _levelSongs;
 
@@ -12,34 +13,36 @@ public class MusicController : MonoBehaviour
     {
         _audioSource = GetComponent<AudioSource>();
         _audioSource.loop = true;
+
         SceneManager.sceneLoaded += OnSceneLoaded;
     }
+
+    private void OnDestroy() => SceneManager.sceneLoaded -= OnSceneLoaded;
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         _sceneIndex = scene.buildIndex;
+        _songIndex = _sceneIndex - 1;
 
-        if (_sceneIndex < _levelSongs.Length && _levelSongs[_sceneIndex] != null)
+        if (_songIndex >= 0 && _songIndex < _levelSongs.Length && _levelSongs[_songIndex] != null)
         {
-            if (_audioSource.clip != _levelSongs[_sceneIndex])
+            if (_audioSource.clip != _levelSongs[_songIndex])
             {
-                _audioSource.clip = _levelSongs[_sceneIndex];
+                _audioSource.clip = _levelSongs[_songIndex];
                 _audioSource.Play();
             }
         }
+
         switch (_sceneIndex)
         {
-            case 0:
-                _audioSource.volume = Mathf.Clamp01(0.75f);
-                break;
-            case 1:
-                _audioSource.volume = Mathf.Clamp01(0.5f);
-                break;
             case 2:
-                _audioSource.volume = Mathf.Clamp01(0.25f);
+                _audioSource.volume = 0.25f;
+                break;
+            case 3:
+                _audioSource.volume = 0.25f;
                 break;
             default:
-                _audioSource.volume = Mathf.Clamp01(0.75f);
+                _audioSource.volume = 0.75f;
                 break;
         }
     }

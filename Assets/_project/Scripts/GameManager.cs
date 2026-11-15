@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     [Header("Game Settings")]
-    private int _lives, _sceneIndex;
+    private int _lives, _sceneIndex, _spriteIndex;
     private bool _isGameOver;
     readonly int _startingLives = 3;
 
@@ -24,6 +24,7 @@ public class GameManager : MonoBehaviour
 
     void Awake()
     {
+        UpdateUI();
         if (Instance == null) {
             Instance = this;
             DontDestroyOnLoad(gameObject);
@@ -93,11 +94,11 @@ public class GameManager : MonoBehaviour
     {
         Time.timeScale = 1;
         _lives = _startingLives;
+        _isGameOver = false;
         _pausePanel.SetActive(false);
         _gameOverPanel.SetActive(false);
         
-        SceneManager.LoadScene(0);
-        UpdateUI();
+        SceneManager.LoadScene(1);
 
         if (_bgmSource != null) _bgmSource.UnPause();
     }
@@ -107,9 +108,13 @@ public class GameManager : MonoBehaviour
         _sceneIndex = SceneManager.GetActiveScene().buildIndex;
 
         _livesText.text = $"x{_lives}";
-        _levelText.text = $"Level {_sceneIndex + 1}";
+        _levelText.text = $"Level {_sceneIndex}";
 
-        if (_characterImage != null && _sceneIndex < _characterSprites.Length && _characterSprites[_sceneIndex] != null)
-            _characterImage.sprite = _characterSprites[_sceneIndex];
+        _spriteIndex = _sceneIndex - 1;
+
+        if (_characterImage != null && _spriteIndex >= 0 && _spriteIndex < _characterSprites.Length && _characterSprites[_spriteIndex] != null)
+        {
+            _characterImage.sprite = _characterSprites[_spriteIndex];
+        }
     }
 }

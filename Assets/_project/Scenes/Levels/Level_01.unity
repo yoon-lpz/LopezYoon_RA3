@@ -1083,9 +1083,9 @@ Camera:
   m_LensShift: {x: 0, y: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: 0.21875001
+    x: 0
     y: 0
-    width: 0.5625
+    width: 1
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
@@ -1271,6 +1271,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 858ad32d036a942489142741348fd4ae, type: 3}
   - {fileID: 8300000, guid: 4df6d34aa3871854faa7fa2282fed61f, type: 3}
   - {fileID: 8300000, guid: d03e8f58c53949e469fe9c521ba00969, type: 3}
+  - {fileID: 8300000, guid: 858ad32d036a942489142741348fd4ae, type: 3}
 --- !u!1 &587231530
 GameObject:
   m_ObjectHideFlags: 0
@@ -24092,6 +24093,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::AudioManager
   TakeDamage: {fileID: 8300000, guid: 4758570fc44923a4da9b3f066882ee3f, type: 3}
   GainLife: {fileID: 8300000, guid: 6d340d72b5f4f0e41beeb82ab65e5de1, type: 3}
+  Door: {fileID: 0}
+  OpenChest: {fileID: 8300000, guid: af62340c42f7b1f408e3b6f90d6cc2fa, type: 3}
 --- !u!82 &637979652
 AudioSource:
   m_ObjectHideFlags: 0
@@ -25323,6 +25326,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 8dd7256c7c0115c4ea53231f68602445, type: 3}
   - {fileID: 21300000, guid: abe13606cd5b0e14d8c025874bc5b30f, type: 3}
   - {fileID: 21300000, guid: adca9496b43e6064f8c11582dd73dd1e, type: 3}
+  - {fileID: 21300000, guid: 8dd7256c7c0115c4ea53231f68602445, type: 3}
   _livesText: {fileID: 54189949}
   _levelText: {fileID: 1987098605}
   _gameOverPanel: {fileID: 1116435428}

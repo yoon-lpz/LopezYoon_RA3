@@ -10,6 +10,7 @@ public class TeleportSystem : MonoBehaviour
     {
         if (_canTeleport && collision.CompareTag("Player") && _destination != null)
         {
+            AudioManager.Instance.PlayDoorSound();
             collision.transform.position = _destination.position;
 
             TeleportSystem destinationTeleporter = _destination.GetComponent<TeleportSystem>();
