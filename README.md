@@ -8,3 +8,4 @@ d -> move right
 
 0 -> change gravity
 
+m -> quit

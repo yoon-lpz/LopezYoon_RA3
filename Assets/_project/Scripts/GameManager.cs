@@ -98,7 +98,7 @@ public class GameManager : MonoBehaviour
         _pausePanel.SetActive(false);
         _gameOverPanel.SetActive(false);
         
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(0);
 
         if (_bgmSource != null) _bgmSource.UnPause();
     }

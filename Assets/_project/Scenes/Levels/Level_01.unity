@@ -997,6 +997,7 @@ GameObject:
   - component: {fileID: 519420034}
   - component: {fileID: 519420035}
   - component: {fileID: 519420036}
+  - component: {fileID: 519420037}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1083,9 +1084,9 @@ Camera:
   m_LensShift: {x: 0, y: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: 0
-    y: 0
-    width: 1
+    x: -0.10052084
+    y: -0.3037037
+    width: 0.5625
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
@@ -1272,6 +1273,18 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 4df6d34aa3871854faa7fa2282fed61f, type: 3}
   - {fileID: 8300000, guid: d03e8f58c53949e469fe9c521ba00969, type: 3}
   - {fileID: 8300000, guid: 858ad32d036a942489142741348fd4ae, type: 3}
+--- !u!114 &519420037
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e814a6a994105e4aa25aef24c04a678, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::QuitGame
 --- !u!1 &587231530
 GameObject:
   m_ObjectHideFlags: 0
@@ -24093,7 +24106,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::AudioManager
   TakeDamage: {fileID: 8300000, guid: 4758570fc44923a4da9b3f066882ee3f, type: 3}
   GainLife: {fileID: 8300000, guid: 6d340d72b5f4f0e41beeb82ab65e5de1, type: 3}
-  Door: {fileID: 0}
+  Door: {fileID: 8300000, guid: 2c9837479457ef143950469f6c78e600, type: 3}
   OpenChest: {fileID: 8300000, guid: af62340c42f7b1f408e3b6f90d6cc2fa, type: 3}
 --- !u!82 &637979652
 AudioSource:

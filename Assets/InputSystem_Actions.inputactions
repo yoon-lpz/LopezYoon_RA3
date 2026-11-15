@@ -1104,6 +1104,35 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "Quit",
+            "id": "31e24f03-195c-489c-a44e-99d430e9668d",
+            "actions": [
+                {
+                    "name": "QuitGame",
+                    "type": "Button",
+                    "id": "3be1efc3-a102-42d9-a441-448f83d5fd9a",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false,
+                    "priority": 0
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "8eae7526-a74f-456b-ae74-3bfd76d0226c",
+                    "path": "<Keyboard>/m",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "QuitGame",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": [

@@ -3,10 +3,13 @@ using UnityEngine.SceneManagement;
 
 public class StartGame : MonoBehaviour
 {
-    public void LoadNextScene()
-    {
-        int nextSceneIndex = SceneManager.GetActiveScene().buildIndex + 1;
+    public void LoadNextScene() { 
 
-        SceneManager.LoadScene(nextSceneIndex);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
+
+    public void ReplayGame()
+    {
+        GameManager.Instance.RestartGame();
     }
 }
