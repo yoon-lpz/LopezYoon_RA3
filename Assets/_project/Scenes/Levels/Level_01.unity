@@ -25287,7 +25287,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf3055b693c60c6499a5a023b03e39e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Parallax
-  parallaxMultiplier: 0
+  parallaxMultiplier: 0.02
   player: {fileID: 140914405}
 --- !u!1 &1105199733
 GameObject:
@@ -27413,7 +27413,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf3055b693c60c6499a5a023b03e39e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Parallax
-  parallaxMultiplier: 0
+  parallaxMultiplier: 0.1
   player: {fileID: 140914405}
 --- !u!1 &1941191414
 GameObject:
